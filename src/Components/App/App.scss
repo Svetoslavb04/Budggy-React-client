@@ -1,0 +1,7 @@
+@use 'src/assets/scss/variables' as v;
+
+#app {
+    box-sizing: border-box;
+    height: 100vh;
+    background-color: v.$secondary-dark;
+}
