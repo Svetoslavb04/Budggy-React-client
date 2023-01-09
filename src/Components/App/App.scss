@@ -1,12 +1,43 @@
-@use 'src/assets/scss/variables' as v;
+@use "src/assets/scss/variables" as v;
 
-#app {
-    padding: 10px;
+*,
+*::before,
+*::after {
     box-sizing: border-box;
+}
+
+.app {
+    padding: 10px;
 
     height: 100vh;
 
     background-color: v.$secondary-dark;
 
-    color: #FFFFFF;
+    color: #ffffff;
+}
+
+.accounts-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.add-account {
+
+    cursor: pointer;
+    
+    .add-account-icon-container {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+
+        svg {
+            width: 40%;
+            height: 40%;
+            fill: v.$secondary-lighther;
+        }
+    }
 }
