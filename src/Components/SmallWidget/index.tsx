@@ -1,6 +1,6 @@
 import './SmallWidget.scss'
 
-import { DetailedHTMLProps, FC, ReactNode } from 'react'
+import { DetailedHTMLProps, FC } from 'react'
 
 export type SmallWidgetProps
     = DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
