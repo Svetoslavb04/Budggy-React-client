@@ -9,6 +9,27 @@
     overflow: hidden;
 }
 
+.navigation {
+    margin-bottom: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .auth-buttons {
+        display: flex;
+        gap: 10px;
+    }
+
+    .nav-settings {
+        
+        svg {
+            width: 30px;
+            height: 30px;
+        }
+    }
+}
+
 .accounts-list {
     display: flex;
     flex-wrap: wrap;
