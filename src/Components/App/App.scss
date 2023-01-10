@@ -16,6 +16,15 @@
     color: #ffffff;
 }
 
+.widget {
+    padding: 1.2rem;
+
+    border-radius: 15px;
+    background-color: v.$secondary-light;
+
+    overflow: hidden;
+}
+
 .accounts-list {
     display: flex;
     flex-wrap: wrap;
@@ -24,9 +33,8 @@
 }
 
 .add-account {
-
     cursor: pointer;
-    
+
     .add-account-icon-container {
         display: flex;
         width: 100%;
@@ -41,3 +49,23 @@
         }
     }
 }
+
+.add-account-wrapper {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    @media screen and (max-width: 600px){
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.divider {
+    width: 100%;
+    border-top: 1px solid #bbb;
+}
+
+
