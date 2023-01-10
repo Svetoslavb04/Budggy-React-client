@@ -12,7 +12,7 @@ import SmallWidget from '../../Core/SmallWidget';
 import Modal from '../../Core/Modal';
 import Button from '../../Core/Button';
 import AddAccount from '../../AddAccount';
-import { LoginForm } from '../../LoignForm';
+import LoginForm from '../../LoignForm';
 
 const Content = () => {
 
