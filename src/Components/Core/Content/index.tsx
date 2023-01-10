@@ -13,6 +13,7 @@ import Modal from '../../Core/Modal';
 import Button from '../../Core/Button';
 import AddAccount from '../../AddAccount';
 import LoginForm from '../../LoignForm';
+import RegisterForm from '../../RegisterForm';
 
 const Content = () => {
 
@@ -47,6 +48,9 @@ const Content = () => {
                     }
                     <Modal opened={isLoginFormOpened} close={setIsLoginFormOpened.bind(null, false)}>
                         <LoginForm />
+                    </Modal>
+                    <Modal opened={isRegisterFormOpened} close={setIsRegisterFormOpened.bind(null, false)}>
+                        <RegisterForm />
                     </Modal>
                 </div>
                 <div className='nav-settings'>
