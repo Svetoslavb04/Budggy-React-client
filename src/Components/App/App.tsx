@@ -1,23 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+
+import AccountCard from '../AccountCard';
+import { BsPlusLg } from 'react-icons/bs'
+import SmallWidget from '../SmallWidget';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div id='app' className="app">
+      <header>
+        <div className='accounts-list'>
+          <AccountCard name='Central Cooperative Bank' currency='BGN' balance={1000} />
+          <AccountCard name='DSK Bank' currency='BGN' balance={1000} />
+          <AccountCard name='Revolut' currency='BGN' balance={1000} />
+          <AccountCard name='UniCredit' currency='BGN' balance={1000} />
+          <SmallWidget className='add-account'>
+            <div className='add-account-icon-container'>
+              <BsPlusLg />
+            </div>
+          </SmallWidget>
+        </div>
+
       </header>
     </div>
   );
