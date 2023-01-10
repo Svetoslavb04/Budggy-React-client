@@ -1,8 +1,12 @@
 import './App.scss';
 
 import AccountCard from '../AccountCard';
+import { useState } from 'react';
+
 import { BsPlusLg } from 'react-icons/bs'
-import SmallWidget from '../SmallWidget';
+
+import AccountCard from '../AccountCard';
+import SmallWidget from '../Core/SmallWidget';
 
 function App() {
   return (
