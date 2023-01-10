@@ -1,0 +1,27 @@
+@use "src/assets/scss/variables" as v;
+
+.small-widget {
+    width: 19%;
+    height: 130px;
+
+    position: relative;
+
+    padding: 1.2rem;
+
+    border-radius: 15px;
+    background-color: v.$secondary-light;
+
+    overflow: hidden;
+
+    @media screen and (max-width: 1620px) {
+        width: 24%;
+    }
+
+    @media screen and (max-width: 1200px) {
+        width: 31%;
+    }
+
+    @media screen and (max-width: 680px) {
+        width: 47%;
+    }
+}

@@ -1,0 +1,57 @@
+@use "src/assets/scss/variables" as v;
+
+.account-card {
+
+    cursor: pointer;
+    
+    .account-card-icon-name-container {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 16px;
+
+        .account-card-icon {
+            padding: 10px;
+
+            display: flex;
+
+            border-radius: 5px;
+
+            background-color: v.$primary;
+
+            @media screen and (min-width: 840px) {
+                padding: 10px;
+            }
+
+            @media screen and (min-width: 1200px) {
+                padding: 12px;
+            }
+        }
+
+        .account-card-name {
+            margin: 0;
+
+            font-size: 1rem;
+            color: v.$secondary-lighther;
+
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+
+            @media screen and (min-width: 840px) {
+                font-size: 1.1rem;
+            }
+        }
+    }
+
+    .account-card-balance {
+        margin: 0;
+        margin-top: 10px;
+
+        position: absolute;
+        bottom: 1.2rem;
+        left: 1.2rem;
+
+        font-size: 1rem;
+    }
+}
