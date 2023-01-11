@@ -7,10 +7,10 @@
 }
 
 .app {
-    padding: 10px;
+    position: relative;
 
-    height: 100vh;
-
+    min-height: 100vh;
+    
     background-color: v.$secondary-dark;
 
     color: #ffffff;

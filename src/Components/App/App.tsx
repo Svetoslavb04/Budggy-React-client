@@ -1,10 +1,10 @@
-import AuthProvider from '../../context/authContext';
-import Content from '../Core/Content';
 import './App.scss';
 
+import AuthProvider from '../../context/authContext';
+
+import Content from '../Content';
+
 function App() {
-
-
   return (
     <div id='app' className="app">
       <AuthProvider>

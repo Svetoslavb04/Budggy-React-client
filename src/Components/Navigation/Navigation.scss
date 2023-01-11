@@ -1,0 +1,23 @@
+#navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .auth-buttons {
+        display: flex;
+        gap: 10px;
+    }
+
+    .nav-link-text {
+        font-size: 1rem;
+    }
+
+    .nav-settings {
+        display: flex;
+        
+        svg {
+            width: 30px;
+            height: 30px;
+        }
+    }
+}

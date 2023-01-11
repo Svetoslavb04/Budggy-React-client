@@ -1,0 +1,41 @@
+@use "src/assets/scss/variables" as v;
+
+#home-page {
+    .accounts-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 15px;
+    }
+
+    .add-account {
+        cursor: pointer;
+
+        .add-account-icon-container {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+
+            svg {
+                width: 40%;
+                height: 40%;
+                fill: v.$secondary-lighther;
+            }
+        }
+    }
+
+    .add-account-wrapper {
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+
+        @media screen and (max-width: 600px) {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+    }
+}

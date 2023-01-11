@@ -2,7 +2,7 @@ import './AddAccount.scss';
 
 import { FC } from "react"
 
-import SmallWidget from '../Core/SmallWidget';
+import SmallWidget from '../../../Components/ui/SmallWidget';
 
 import { BsBank2, BsCashCoin } from 'react-icons/bs'
 
