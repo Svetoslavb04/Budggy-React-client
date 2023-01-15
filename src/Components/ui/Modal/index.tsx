@@ -13,9 +13,9 @@ const Modal: FC<Props> = ({ opened, close, children }) => {
     const handleClick = (e: MouseEvent<HTMLDivElement>) => {
 
         const target = e.target as Element;
-        
+
         if (target.classList.contains('modal')) {
-            close()        
+            close()
         }
 
     }
@@ -25,7 +25,11 @@ const Modal: FC<Props> = ({ opened, close, children }) => {
             className={`modal${opened ? ' modal-visible' : ''}`}
             onClick={handleClick}
         >
-            {children}
+            {
+                opened
+                    ? children
+                    : <></>
+            }
         </div>
     )
 }
