@@ -16,7 +16,7 @@ const defaultUser: User = {
     _id: ''
 }
 
-export type AuthContext = {
+export type AuthContextValue = {
     user: User,
     login: (username: string, password: string) => void,
     register: (username: string, password: string, repassword: string) => void,
@@ -24,7 +24,7 @@ export type AuthContext = {
     identified: Boolean
 }
 
-const defaultValue: AuthContext = {
+const defaultValue: AuthContextValue = {
     user: defaultUser,
     login: (username, password) => { },
     register: (username, password, repassword) => { },
@@ -32,7 +32,7 @@ const defaultValue: AuthContext = {
     identified: false
 }
 
-export const AuthContext = createContext<AuthContext>(defaultValue);
+export const AuthContext = createContext<AuthContextValue>(defaultValue);
 
 const AuthProvider = ({ children }: { children: ReactNode }) => {
 

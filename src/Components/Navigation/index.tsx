@@ -20,7 +20,7 @@ const Navigation = () => {
                             <h2>{user.username || ''}</h2>
                             <div className='auth-buttons'>
                                 {
-                                    user.email != ''
+                                    user.email !== ''
                                         ?
                                         <Button
                                             className='logout-button'
