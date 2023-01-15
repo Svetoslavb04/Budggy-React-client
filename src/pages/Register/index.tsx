@@ -2,21 +2,27 @@ import './Register.scss'
 
 import { FormEvent } from 'react'
 
+import { useAuthContext } from '../../context/authContext';
+
 import Button from '../../Components/ui/Button';
 import Input from '../../Components/ui/Input';
 
 const Register = () => {
 
-    const handleFormSubmit = (e: FormEvent<HTMLFormElement>) => {
+    const { register } = useAuthContext();
+
+    const handleFormSubmit = async (e: FormEvent<HTMLFormElement>) => {
 
         e.preventDefault();
 
         const formData = new FormData(e.currentTarget);
 
-        const username = formData.get('username')
-        const password = formData.get('password')
-        const repassword = formData.get('repassword')
+        const email = formData.get('email')?.toString() || ''
+        const username = formData.get('username')?.toString() || ''
+        const password = formData.get('password')?.toString() || ''
 
+       register(email, username, password)
+       
     }
 
     return (
@@ -24,6 +30,9 @@ const Register = () => {
             <div className='widget register-form-container'>
                 <h2>Register</h2>
                 <form onSubmit={handleFormSubmit}>
+                    <div className='email-container'>
+                        <Input className='email' type='text' name='email' placeholder='Email' />
+                    </div>
                     <div className='username-container'>
                         <Input className='username' type='text' name='username' placeholder='Username' />
                     </div>

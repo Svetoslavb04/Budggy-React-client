@@ -2,19 +2,25 @@ import './Login.scss'
 
 import { FormEvent } from 'react'
 
+import { useAuthContext } from '../../context/authContext';
+
 import Button from '../../Components/ui/Button';
 import Input from '../../Components/ui/Input';
 
 const Login = () => {
 
-    const handleFormSubmit = (e: FormEvent<HTMLFormElement>) => {
+    const { login } = useAuthContext();
+
+    const handleFormSubmit = async (e: FormEvent<HTMLFormElement>) => {
 
         e.preventDefault();
 
         const formData = new FormData(e.currentTarget);
 
-        const username = formData.get('username')
-        const password = formData.get('password')
+        const email = formData.get('email')?.toString() || ''
+        const password = formData.get('password')?.toString() || ''
+
+        login(email, password)
 
     }
 
@@ -23,8 +29,8 @@ const Login = () => {
             <div className='widget login-form-container'>
                 <h2>Login</h2>
                 <form onSubmit={handleFormSubmit}>
-                    <div className='username-container'>
-                        <Input className='username' type='text' name='username' placeholder='Username' />
+                    <div className='email-container'>
+                        <Input className='email' type='text' name='email' placeholder='Email' />
                     </div>
                     <div className='password-container'>
                         <Input className='password' type='password' name='password' placeholder='Password' />
