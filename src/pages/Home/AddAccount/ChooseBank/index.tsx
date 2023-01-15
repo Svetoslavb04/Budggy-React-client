@@ -1,8 +1,10 @@
 import './ChooseBank.scss';
 
-import { FC, useRef, useState } from "react"
+import { FC, useState } from "react"
 
 import { apiConfig } from '../../../../data/apiConfig';
+
+import { IInstitution } from '../../../../interfaces/IInstitution';
 
 import { AiOutlineLeftCircle } from 'react-icons/ai'
 
@@ -13,6 +15,9 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import InputLabel from '@mui/material/InputLabel';
 import useFetch from '../../../../hooks/useFetch';
+import InstitutionCard from './InstitutionCard';
+import { getBankAuthenticationLink } from '../../../../services/openBankingService';
+
 
 const ChooseBank: FC = () => {
 
@@ -29,10 +34,24 @@ const ChooseBank: FC = () => {
         .sort((c1: Country, c2: Country) => c1.name.localeCompare(c2.name))
 
     const [selectedCountry, setSelectedCountry] = useState<string>('');
-    // const institutionsState = useFetch<{ name: string, value: string }[]>(apiConfig.getAllCountries);
+
+    const institutionsState = useFetch<IInstitution[]>(`${apiConfig.institutionsUrl}?country=${selectedCountry}`);
 
     const handleCountrySelection = (e: SelectChangeEvent<string>) => {
         setSelectedCountry(e.target.value)
+    }
+
+    const handleInstitutionClick = async (institution: IInstitution) => {
+        console.log(institution);
+
+        try {
+
+            const data = await getBankAuthenticationLink(institution.id)
+            
+            window.open(data.link, '_blank');
+
+        } catch (error) { console.log(await error) }
+
     }
 
     return (
@@ -70,7 +89,15 @@ const ChooseBank: FC = () => {
                     </Select>
                 </FormControl>
                 <div className='add-account-choose-bank-institutions'>
-
+                    {
+                        institutionsState.data?.map(
+                            i => <InstitutionCard
+                                key={i.name}
+                                institution={i}
+                                onClick={handleInstitutionClick.bind(null, i)}
+                            />
+                        )
+                    }
                 </div>
             </div>
         </div>

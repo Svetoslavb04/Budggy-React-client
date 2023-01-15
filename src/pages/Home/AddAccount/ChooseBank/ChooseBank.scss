@@ -32,6 +32,34 @@
         margin-left: 0.75rem;
         font-size: 1rem;
     }
+
+    .add-account-choose-bank-institutions {
+        margin-top: 1rem;
+        max-height: 40vh;
+
+        padding-right: 15px;
+        overflow: auto;
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 1.5rem;
+
+        /* width */
+        &::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        /* Track */
+        &::-webkit-scrollbar-track {
+            background: v.$secondary-lighter;
+        }
+
+        /* Handle */
+        &::-webkit-scrollbar-thumb {
+            background: v.$secondary-dark;
+        }
+    }
 }
 
 .choose-bank-countries-list {
