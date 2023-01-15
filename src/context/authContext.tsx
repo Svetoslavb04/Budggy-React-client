@@ -71,7 +71,7 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
 
         try {
 
-            await authService.register(email, username, password)
+            const user: User = await authService.register(email, username, password)
 
             setUser(user)
 
