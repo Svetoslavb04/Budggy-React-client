@@ -8,10 +8,19 @@ import AccountCard from './AccountCard';
 import AddAccount from './AddAccount';
 import SmallWidget from '../../Components/ui/SmallWidget';
 import Modal from '../../Components/ui/Modal';
+import useFetch from '../../hooks/useFetch';
+import { apiConfig } from '../../data/apiConfig';
 
 const Home = () => {
 
     const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
+
+    const accounts = useFetch<any>(apiConfig.accountsUrl, {
+        method: 'GET',
+        credentials: 'include'
+    })
+    console.log(accounts);
+    
     return (
         <div id='home-page'>
             <div className='accounts-list'>

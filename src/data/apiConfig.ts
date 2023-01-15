@@ -9,5 +9,6 @@ export const apiConfig = {
     logoutUrl: `${userBaseUrl}/logout`,
     meUrl: `${userBaseUrl}/me`,
     institutionsUrl: `${openBankingBaseUrl}/institutions`,
-    requisitionUrl: `${openBankingBaseUrl}/requisition`
+    requisitionUrl: `${openBankingBaseUrl}/requisition`,
+    accountsUrl: `${openBankingBaseUrl}/accounts`
 }
