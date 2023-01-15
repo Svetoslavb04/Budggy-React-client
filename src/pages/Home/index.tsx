@@ -10,24 +10,31 @@ import SmallWidget from '../../Components/ui/SmallWidget';
 import Modal from '../../Components/ui/Modal';
 import useFetch from '../../hooks/useFetch';
 import { apiConfig } from '../../data/apiConfig';
+import { IAccount } from '../../interfaces/IAccount';
 
 const Home = () => {
 
     const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
 
-    const accounts = useFetch<any>(apiConfig.accountsUrl, {
+    const accounts = useFetch<IAccount[]>(apiConfig.accountsUrl, {
         method: 'GET',
         credentials: 'include'
     })
     console.log(accounts);
-    
+
     return (
         <div id='home-page'>
             <div className='accounts-list'>
-                <AccountCard name='Central Cooperative Bank' currency='BGN' balance={1000} />
-                <AccountCard name='DSK Bank' currency='BGN' balance={1000} />
-                <AccountCard name='Revolut' currency='BGN' balance={1000} />
-                <AccountCard name='UniCredit' currency='BGN' balance={1000} />
+                {
+                    accounts.data?.map(a =>
+                        <AccountCard
+                            key={a.resourceId}
+                            name={a.name || a.institution_name}
+                            currency={a.currency}
+                            balance={Number(a.balances[0].balanceAmount.amount)}
+                        />
+                    )
+                }
                 <SmallWidget className='add-account' onClick={setIsCreateModalOpen.bind(null, true)}>
                     <div className='add-account-icon-container'>
                         <BsPlusLg />
