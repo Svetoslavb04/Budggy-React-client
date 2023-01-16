@@ -6,13 +6,9 @@ import { ImStatsBars } from 'react-icons/im';
 import { CgMoreR } from 'react-icons/cg';
 import { BiTransfer } from 'react-icons/bi';
 
-import { useAuthContext } from '../../context/authContext';
-
 import { NavLink } from 'react-router-dom';
 
 const Footer = () => {
-
-    const { user, logout } = useAuthContext();
 
     return (
         <nav id='footer' className='widget'>
