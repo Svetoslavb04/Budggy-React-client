@@ -2,6 +2,9 @@ import './Home.scss'
 
 import { useState } from 'react';
 
+import { apiConfig } from '../../data/apiConfig';
+import { IAccount } from '../../interfaces/IAccount';
+
 import { BsPlusLg } from 'react-icons/bs'
 
 import AccountCard from './AccountCard';
@@ -9,10 +12,11 @@ import AddAccount from './AddAccount';
 import SmallWidget from '../../Components/ui/SmallWidget';
 import Modal from '../../Components/ui/Modal';
 import useFetch from '../../hooks/useFetch';
-import { apiConfig } from '../../data/apiConfig';
-import { IAccount } from '../../interfaces/IAccount';
+import { useAuthContext } from '../../context/authContext';
 
 const Home = () => {
+
+    const { user } = useAuthContext();
 
     const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
 
@@ -20,7 +24,14 @@ const Home = () => {
         method: 'GET',
         credentials: 'include'
     })
-    console.log(accounts);
+
+    const handleAddAccount = () => {
+
+        if (!user._id) { return }
+        console.log('pas');
+        
+        setIsCreateModalOpen.bind(null, false)
+    }
 
     return (
         <div id='home-page'>
@@ -35,7 +46,7 @@ const Home = () => {
                         />
                     )
                 }
-                <SmallWidget className='add-account' onClick={setIsCreateModalOpen.bind(null, true)}>
+                <SmallWidget className='add-account' onClick={handleAddAccount}>
                     <div className='add-account-icon-container'>
                         <BsPlusLg />
                     </div>
