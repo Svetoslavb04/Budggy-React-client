@@ -47,7 +47,7 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
             .then(user => {
                 setIdentified(true)
 
-                if (user._id) {
+                if (user._id !== null) {
                     return setUser(user)
                 }
                 return setUser(defaultUser)
