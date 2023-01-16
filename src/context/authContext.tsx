@@ -45,9 +45,12 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
 
         authService.me()
             .then(user => {
-
-                setUser(user || defaultUser)
                 setIdentified(true)
+
+                if (user._id) {
+                    return setUser(user)
+                }
+                return setUser(defaultUser)
 
             })
 
