@@ -26,11 +26,10 @@ const Home = () => {
     })
 
     const handleAddAccount = () => {
-
-        if (!user._id) { return }
-        console.log('pas');
         
-        setIsCreateModalOpen.bind(null, false)
+        if (!user._id) { return }
+        
+        setIsCreateModalOpen(true)
     }
 
     return (
