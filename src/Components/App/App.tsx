@@ -1,26 +1,35 @@
 import './App.scss';
 
-import AccountCard from '../AccountCard';
-import { BsPlusLg } from 'react-icons/bs'
-import SmallWidget from '../SmallWidget';
+import AuthProvider from '../../context/authContext';
+
+import Content from '../Content';
+import { createTheme, ThemeProvider } from '@mui/material';
 
 function App() {
+
+  const theme = createTheme({
+    palette: {
+      mode: 'dark',
+      primary: {
+        light: '#4CC441',
+        main: '#4E9F3D',
+        dark: '#1E5128'
+      },
+      secondary: {
+        light: '#202120',
+        main: '#191A19',
+        dark: '#0a0a0a'
+      }
+    }
+  });
+
   return (
     <div id='app' className="app">
-      <header>
-        <div className='accounts-list'>
-          <AccountCard name='Central Cooperative Bank' currency='BGN' balance={1000} />
-          <AccountCard name='DSK Bank' currency='BGN' balance={1000} />
-          <AccountCard name='Revolut' currency='BGN' balance={1000} />
-          <AccountCard name='UniCredit' currency='BGN' balance={1000} />
-          <SmallWidget className='add-account'>
-            <div className='add-account-icon-container'>
-              <BsPlusLg />
-            </div>
-          </SmallWidget>
-        </div>
-
-      </header>
+      <AuthProvider>
+        <ThemeProvider theme={theme}>
+          <Content />
+        </ThemeProvider>
+      </AuthProvider>
     </div>
   );
 }

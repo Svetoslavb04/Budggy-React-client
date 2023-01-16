@@ -2,7 +2,7 @@ import './AccountCard.scss'
 
 import { FC } from 'react'
 
-import SmallWidget, { SmallWidgetProps } from '../SmallWidget';
+import SmallWidget, { SmallWidgetProps } from '../../../Components/ui/SmallWidget';
 
 import { BsCash } from "react-icons/bs";
 import { IconType } from 'react-icons/lib';

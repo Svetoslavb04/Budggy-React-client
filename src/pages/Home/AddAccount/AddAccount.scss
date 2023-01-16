@@ -1,0 +1,33 @@
+@use "src/assets/scss/variables" as v;
+
+.add-account-container {
+    width: 600px;
+    border: 1px solid #fff;
+
+    .step-heading {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 10px;
+
+        margin-bottom: 8px;
+
+        h2 {
+            margin: 0;
+        }
+
+        svg {
+            cursor: pointer;
+            width: 22px;
+            height: 22px;
+        }
+    }
+
+    @media screen and (min-width: 1920px) {
+        width: 800px;
+    }
+
+    @media screen and (max-width: 600px) {
+        width: 90%;
+    }
+}

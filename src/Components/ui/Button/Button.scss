@@ -1,0 +1,15 @@
+@use "src/assets/scss/variables" as v;
+
+.button {
+    cursor: pointer;
+    
+    padding: 10px 20px;
+
+    border-radius: 10px;
+    border: none;
+
+    background-color: v.$secondary-dark;
+
+    font-family: inherit;
+    color: #FFFFFF;
+}
