@@ -1,4 +1,4 @@
-const baseURL = 'https://jolly-blue-culottes.cyclic.app'
+const baseURL = 'https://budggy-server.onrender.com/'
 const openBankingBaseUrl = `${baseURL}/open-banking`
 const userBaseUrl = `${baseURL}/user`
 
