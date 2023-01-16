@@ -1,4 +1,4 @@
-const baseURL = 'http://localhost:3001'
+const baseURL = 'https://jolly-blue-culottes.cyclic.app'
 const openBankingBaseUrl = `${baseURL}/open-banking`
 const userBaseUrl = `${baseURL}/user`
 
