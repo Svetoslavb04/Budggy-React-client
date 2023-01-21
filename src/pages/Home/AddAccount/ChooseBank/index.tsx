@@ -35,7 +35,10 @@ const ChooseBank: FC = () => {
 
     const [selectedCountry, setSelectedCountry] = useState<string>('');
 
-    const institutionsState = useFetch<IInstitution[]>(`${apiConfig.institutionsUrl}?country=${selectedCountry}`);
+    const institutionsState = useFetch<IInstitution[]>(`${apiConfig.institutionsUrl}?country=${selectedCountry}`, {
+        method: 'GET',
+        credentials: 'include'
+    });
 
     const handleCountrySelection = (e: SelectChangeEvent<string>) => {
         setSelectedCountry(e.target.value)
