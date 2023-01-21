@@ -45,13 +45,13 @@ const ChooseBank: FC = () => {
     }
 
     const handleInstitutionClick = async (institution: IInstitution) => {
-        console.log(institution);
 
         try {
-
-            const data = await getBankAuthenticationLink(institution.id)
+            const windowReference = window.open();
             
-            window.open(data.link, '_blank');
+            const data = await getBankAuthenticationLink(institution.id)
+
+            windowReference!.location = data.link;
 
         } catch (error) { console.log(await error) }
 
